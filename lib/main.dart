@@ -1,0 +1,19 @@
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
+
+import 'app/routes/app_pages.dart';
+import 'certificate.dart';
+
+void main() {
+  HttpOverrides.global = MyHttpOverrides();
+  runApp(
+    GetMaterialApp(
+      title: "Application",
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
+    ),
+  );
+}
